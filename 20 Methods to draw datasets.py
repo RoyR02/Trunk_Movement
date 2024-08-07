@@ -32,20 +32,20 @@ sns.heatmap(corr, cmap='coolwarm', annot=True)
 plt.title('Correlation heatmap')
 plt.show()
 
-# 8. Violin plot
+# 4. Violin plot
 sns.violinplot(X='Status', y='age', data=df)
 plt.title('Violin plot')
 plt.show()
 
 
-# 14. Pie chart
+# 5. Pie chart
 df['Status'].value_counts().plot(kind='pie', autopct='%1.1f%%')
 plt.title('Pie chart')
 plt.show()
 
 
 
-# 18. Radar chart
+# 5. Radar chart
 categories = list(df.columns)[1:]
 values = df.iloc[0][1:].tolist()
 values += values[:1]
@@ -59,15 +59,13 @@ ax.set_title('Radar chart', fontsize=20)
 plt.title('Radar chart')
 plt.show()
 
-#
-
-# 22. Parallel coordinate plot
+# 6. Parallel coordinate plot
 from pandas.plotting import parallel_coordinates
 parallel_coordinates(df, 'Status')
 plt.title('Parallel coordinate plot')
 plt.show()
 
-# 23. Andrews curves
+# 7. Andrews curves
 from pandas.plotting import andrews_curves
 andrews_curves(df, 'Status')
 plt.title('Andrews curves')
@@ -75,6 +73,6 @@ plt.show()
 
 
 
-# 24. Heatmap with dendrogram
+# 8. Heatmap with dendrogram
 sns.clustermap(df.corr(), cmap='coolwarm', standard_scale=1)
 plt.show()
